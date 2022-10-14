@@ -32,7 +32,7 @@ public class Village {
 	public void afficherVillageois(Village village) {
 		System.out.println("Le chef du village est:"+ village.chef);
 		for (int i=0; i<nbVillageois; i=i+1) {
-			System.out.println(village[i]);
+			System.out.println(village.villageois[i]);
 		}
 	}
 	
