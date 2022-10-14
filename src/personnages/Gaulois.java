@@ -43,7 +43,7 @@ public class Gaulois {
 	
 	
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Astérix", 8);
+		Gaulois asterix = new Gaulois("Asterix", 8);
 		System.out.println(asterix);
 		
 		asterix.parler("Je suis un test");
@@ -51,7 +51,7 @@ public class Gaulois {
 		Romain jule = new Romain("Jule",8);
 		asterix.frapper(jule);
 		asterix.boirePotion(4);
-		//TODO cr�er un main permettant de tester la classe Gaulois
+		//TODO
 		
 	}
 }
