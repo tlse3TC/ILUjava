@@ -8,7 +8,7 @@ public class Gaulois {
 	
 	/*   TP3   */
 	private int nbTrophees;
-	private Equipement[] trophees = new Equipement[100];
+	public Equipement[] trophees = new Equipement[100];
 	/* FIN TP3  */
 	
 	public Gaulois(String nom, int force) {
@@ -41,12 +41,23 @@ public class Gaulois {
 	/*   TP3   */
 	
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
 		Equipement[] tropheesAcqui = romain.recevoirCoup((force / 3) * effetPotion);
 		for (int i = 0; tropheesAcqui != null && i < tropheesAcqui.length; i++, nbTrophees++) {
 			this.trophees[nbTrophees] = tropheesAcqui[i];}
 		}
 	
+	
+	
+	
+
+	public void faireUneDonnation(Musee musee) {
+		parler("Je donne au musee tous mes trophees:");
+		for (int i=0;i<nbTrophees;i++) {
+			System.out.println(trophees[i]);
+		}
+		
+	}
 	
 	/* FIN TP3  */
 	
@@ -62,7 +73,7 @@ public class Gaulois {
 	
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
-		parler("Merci Druide je sens que ma force est "+ effetPotion+" fois décuplée.");
+		parler("Merci Druide je sens que ma force est "+ effetPotion+" fois decuplee.");
 	}
 	
 	
