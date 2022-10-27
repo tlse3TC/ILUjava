@@ -6,6 +6,11 @@ public class Gaulois {
 	private int force;
 	private int effetPotion =1;
 	
+	/*   TP3   */
+	private int nbTrophees;
+	private Equipement[] trophees = new Equipement[100];
+	/* FIN TP3  */
+	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
@@ -24,11 +29,30 @@ public class Gaulois {
 		return "Le gaulois " + nom + " : ";
 
 	}
-	
+	/*
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
 		romain.recevoirCoup((force / 3)*effetPotion);
 	}
+	*/
+	
+	
+	
+	/*   TP3   */
+	
+	public void frapper(Romain romain) {
+		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		Equipement[] tropheesAcqui = romain.recevoirCoup((force / 3) * effetPotion);
+		for (int i = 0; tropheesAcqui != null && i < tropheesAcqui.length; i++, nbTrophees++) {
+			this.trophees[nbTrophees] = tropheesAcqui[i];}
+		}
+	
+	
+	/* FIN TP3  */
+	
+
+	
+	
 	
 	@Override
 	public String toString () {
