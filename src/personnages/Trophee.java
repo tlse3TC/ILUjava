@@ -6,7 +6,7 @@ public class Trophee {
 	
 	
 	public Trophee(Gaulois gaulois, Equipement equipement) {
-		//super();
+		super();
 		this.gaulois = gaulois;
 		this.equipement = equipement;
 	}

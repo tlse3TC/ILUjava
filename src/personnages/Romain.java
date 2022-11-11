@@ -5,7 +5,7 @@ public class Romain {
 	private int force;
 	
 	private Equipement [] equipements;
-	int nbEquipement =0;
+	int nbEquipement = 0;
 	
 	private String texte;
 	
@@ -55,18 +55,13 @@ public class Romain {
 	/*        TP3        */
 	
 	public Equipement[] recevoirCoup(int forceCoup) {
-		Equipement[] equipementEjecte = null;
+			Equipement[] equipementEjecte = null;
 			// precondition
 			assert force > 0;
 			int oldForce = force;
 			forceCoup = calculResistanceEquipement(forceCoup);
 			force -= forceCoup;
-			// if (force > 0) {
-			// 		parler("AÃ¯e");
-			// } else {
-			// 		equipementEjecte = ejecterEquipement();
-			// parler("J'abandonne...");
-			// }
+			
 			if (force==0) {
 				parler("Aie");
 			} else {
@@ -85,7 +80,7 @@ public class Romain {
 		texte = "Ma force est de " + this.force + ", et la force du coup est de " + forceCoup;
 		int resistanceEquipement = 0;
 		if (nbEquipement != 0) {
-			texte += "\nMais heureusement, grace a  mon equipement sa force est diminue de ";
+			texte += "\nMais heureusement, grace aï¿½ mon equipement sa force est diminue de ";
 			for (int i = 0; i < nbEquipement;i++) {
 				if (equipements[i] != null && equipements[i].equals(Equipement.BOUCLIER)) {
 					resistanceEquipement += 8;
@@ -108,12 +103,13 @@ public class Romain {
 		System.out.println("L'equipement de " + nom + " s'envole sous la force du coup.");
 		//TODO
 		int nbEquipementEjecte = 0;
-		for (int i = 0; i < nbEquipement; i++) {
+		for (int i = 0; i <= nbEquipement; i++) {
 			if (equipements[i] != null) {
 				equipementEjecte[nbEquipementEjecte] = equipements[i];
 				nbEquipementEjecte++;
 				equipements[i] = null;
-				nbEquipement = nbEquipement-1 ;} //Ajout test 
+				nbEquipement = nbEquipement-1 ; //Ajout test 
+				} 
 				}
 			return equipementEjecte;
 			}
@@ -126,7 +122,7 @@ public class Romain {
 	public void sEquiper(Equipement equipement) {
 		switch (nbEquipement) {
 			case 2:
-				System.out.println("Le soldat "+ this.nom +" est deja  bien protege !");
+				System.out.println("Le soldat "+ this.nom +" est deja bien protege !");
 				break;
 				
 			case 1:
