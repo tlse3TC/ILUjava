@@ -14,17 +14,21 @@ public class Gaulois {
 		return nom;
 		}
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "« " + texte + "»");
+		System.out.println(prendreParole() + "< " + texte + " >");
 		}
 	private String prendreParole() {
 		return "Le gaulois " + nom + " : ";
 		}
 	
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de "
-		+ romain.getNom());
-		romain.recevoirCoup(force / 3);
+		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
+		romain.recevoirCoup((force / 3)*effetPotion);
 		}
+	
+	public void boirePotion(int forcePotion) {
+		effetPotion=forcePotion;
+		parler("Merci druide je sens que ma force est: "+effetPotion+" fois decuplee");
+	}
 	
 	@Override
 	public String toString() {
@@ -33,6 +37,15 @@ public class Gaulois {
 		}
 	
 	public static void main(String[] args) {
-	//TODO créer un main permettant de tester la classe Gaulois
-	}
+		
+		Gaulois asterix =new Gaulois("Asterix",8);
+		System.out.println(asterix.getNom());
+		System.out.println(asterix);
+		
+		Romain minus = new Romain("Minus",3);
+		asterix.boirePotion(4);
+		
+		asterix.parler("Bonjour!");
+		asterix.frapper(minus);
+		}
 }
