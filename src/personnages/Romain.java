@@ -44,7 +44,6 @@ public class Romain {
 		minus.parler("Bonjour!");
 		
 		minus.recevoirCoup(4);
-		
 		System.out.println(Equipement.CASQUE);
         System.out.println(Equipement.BOUCLIER);
 		
